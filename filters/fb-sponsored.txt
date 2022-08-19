@@ -1,1 +1,5 @@
 Temporary file holder
+
+Filters are currently being tested.
+
+Will be updated soon!
