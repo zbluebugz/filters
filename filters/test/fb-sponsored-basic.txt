@@ -47,3 +47,10 @@ facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span
 
 ! paid partnership posts (news feed)
 facebook.com##div[role="feed"] > div span[dir] > span[id] a[href^="/business/help/"]:upward(div[role="feed"] > div):style(border:6px dotted blue !important; padding: 0 0.25rem; width:66% !important;)
+
+
+! marketplace feed
+! - nb: AdGuard Base filter list hides the label only - not the marketplace item. here, we do both.
+! - nb: "Sponsored" is not obfuscated
+facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]:upward(1):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
+facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(div[style*="max-width"]):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
