@@ -2,10 +2,16 @@
 
 For use in uBlock Origin
 
+### Facebook ###
+
 Filters for blocking Sponsored, Paid Partnership, Suggested posts and miscellaneous items in Facebook.
 
-Filter for blocking Sponsored posts in Instagram.
+Works with most languages. 
 
-#### Notes: ###
-- Filters in the "test" folder applies a colour dotted borders around items that the rules find.
-- Filters in the "live" folder hides the items that the rules find.
+__Notes:__<br />
+- Most of the rules do not use keywords to find the items, instead they look for a particular structure pattern.
+- However, Sponsored posts rules also include keywords patterns.
+
+
+### Instagram ###
+Filter for blocking Sponsored posts in Instagram (English only)
