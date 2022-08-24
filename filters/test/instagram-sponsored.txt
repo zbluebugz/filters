@@ -1,0 +1,15 @@
+! Title: Filters - Instagram sponsored (test)
+! Description: Block sponsored posts
+! License: http://creativecommons.org/licenses/by/3.0/
+! Homepage: https://github.com/zbluebugz/filters-fb
+! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
+! Language: English
+! Last modified: 23 Aug 2022 21:00 UTC
+! Expires: 3 days (update frequency)
+!
+! Legal stuff (T&C's) 
+! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
+! By downloading or viewing, or using this list, you are accepting these terms and the license.
+!
+
+instagram.com##article > div > div > div > header > div:nth-of-type(2) > div:nth-of-type(2) > div > div > span:has-text(/^Sponsored$/i):upward(article > div):style(border:6px dotted pink !important;)
