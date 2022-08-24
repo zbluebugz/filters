@@ -1,0 +1,24 @@
+! Title: Filters - FB - suggested
+! Description: Block suggested posts in News Feed, Groups Feed, Watch Videos Feed, Search results
+! License: http://creativecommons.org/licenses/by/3.0/
+! Homepage: https://github.com/zbluebugz/filters-fb
+! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
+! Language: English
+! Last modified: 23 Aug 2022 21:00 UTC
+! Expires: 3 days (update frequency)
+!
+! Legal stuff (T&C's) 
+! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
+! By downloading or viewing, or using this list, you are accepting these terms and the license.
+!
+
+
+! suggested (news feed)
+! - last span needs not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
+facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward([role="feed"] > div)
+
+! suggested (groups feed)
+facebook.com##i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"]>div)
+
+! suggested - top of feed / other column (groups feed)
+facebook.com##a[href*="/groups/discover"] > span > span:upward(21)
