@@ -12,6 +12,8 @@
 ! By downloading or viewing, or using this list, you are accepting these terms and the license.
 !
 
+! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
+facebook.com##div[role="feed"] > div div[data-0]:remove()
 
 ! suggested (news feed)
 ! - last span needs :not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
