@@ -57,7 +57,7 @@ facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(d
 
 
 ! suggested (news feed)
-! - last span needs not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
+! - last span needs :not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
 facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward([role="feed"] > div)
 
 ! suggested (groups feed)
