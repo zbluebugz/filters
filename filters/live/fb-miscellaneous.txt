@@ -1,5 +1,5 @@
 ! Title: Filters - FB - miscellaneous
-! Description: Block freinds you may know, stories | reels | rooms, reel/short videos (collection), reel posts, information boxes in News Feed
+! Description: Block friends you may know, stories | reels | rooms, reel/short videos (collection), reel posts, information boxes in News Feed
 ! License: http://creativecommons.org/licenses/by/3.0/
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
