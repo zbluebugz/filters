@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 23 Aug 2022 21:00 UTC
+! Last modified: 24 Aug 2022 21:00 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
@@ -12,6 +12,8 @@
 ! By downloading or viewing, or using this list, you are accepting these terms and the license.
 !
 
+! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
+facebook.com##div[role="feed"] > div div[data-0]:remove()
 
 ! suggested (news feed)
 ! - last span needs :not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
