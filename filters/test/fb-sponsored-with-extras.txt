@@ -86,4 +86,3 @@ facebook.com##div[role="feed"] > div a[href*="/climatescienceinfo/?hoisted"]:upw
 facebook.com##div[role="feed"] > div a[href*="/coronavirus_info/"]:upward(5):style(border:6px dotted peachpuff !important;)
 ! "Information box" - subscribe
 facebook.com##div[role="feed"] > div a[href*="/support/"]:upward(5):style(border:6px dotted peachpuff !important;)
-Footer
