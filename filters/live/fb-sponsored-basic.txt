@@ -1,0 +1,56 @@
+! Title: Filters - FB - sponsored (basic)
+! Description: Block sponsored and paid partnership posts in News Feed, Groups Feed, Watch Videos Feed, Search results
+! License: http://creativecommons.org/licenses/by/3.0/
+! Homepage: https://github.com/zbluebugz/filters-fb
+! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
+! Language: English
+! Last modified: 23 Aug 2022 21:00 UTC
+! Expires: 3 days (update frequency)
+!
+! Legal stuff (T&C's) 
+! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
+! By downloading or viewing, or using this list, you are accepting these terms and the license.
+!
+
+! sponsored (news / groups / videos / search)
+! -- clear out hidden elements to enable detection of sponsored posts (news / groups / search)
+! --- do not use span[id] - search page doesn't have this. instead, use span[class]
+facebook.com##[role="feed"] > div span > span > span > a[href="#"] :matches-css(display: none):remove()
+facebook.com##[role="feed"] > div span > span > span > a[href="#"] :matches-css(position: absolute):remove()
+facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] :matches-css(display: none):remove()
+facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] :matches-css(position: absolute):remove()
+! -- clear out hidden elements to enable detection of sponsore posts (Videos)
+facebook.com##[id="watch_feed"] > div span > span > a[href="#"] :matches-css(display: none):remove()
+facebook.com##[id="watch_feed"] > div span > span > a[href="#"] :matches-css(position: absolute):remove()
+facebook.com##[id="watch_feed"] > div span > span > a[href*="/ads/"] :matches-css(display: none):remove()
+facebook.com##[id="watch_feed"] > div span > span > a[href*="/ads/"] :matches-css(position: absolute):remove()
+! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
+facebook.com##div[role="feed"] > div div[data-0]:remove()
+
+! -- hide sponsored posts (news / groups / search feed)
+! -- שעה אחת = Hebrew for "one hour"
+! -- [\u0660-\u0669] = Arabic digits 
+! -- [0-9] = ASCII digits
+facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div)
+facebook.com##[role="feed"] > div span > span > span > a[href="#"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div)
+
+! -- non-obfuscated version
+facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div)
+facebook.com##[role="feed"] > div span > span > span > a[href="#"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div)
+
+
+! -- hide sponsored posts (watch videos feed)
+facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward(div#watch_feed > div > div > div > div > div > div[class])
+! -- non-obfuscated version
+facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward(div#watch_feed > div > div > div > div > div > div[class])
+
+
+! paid partnership posts (news feed)
+facebook.com##div[role="feed"] > div span[dir] > span[id] a[href^="/business/help/"]:upward(div[role="feed"] > div)
+
+
+! marketplace feed
+! - nb: AdGuard Base filter list hides the label only - not the marketplace item. here, we do both.
+! - nb: "Sponsored" is not obfuscated
+facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]:upward(1)
+facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(div[style*="max-width"])
