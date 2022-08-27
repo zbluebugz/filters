@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 23 Aug 2022 21:00 UTC
+! Last modified: 27 Aug 2022 14:30 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
@@ -61,7 +61,9 @@ facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(d
 facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward([role="feed"] > div)
 
 ! suggested (groups feed)
-facebook.com##i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"]>div)
+! - first one a solo image, second is a sprite image
+facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"] > div)
+facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/b8D0OhzjWyE.png"][style*="background-position: 0px -70px"]:upward(div[role="feed"] > div)
 
 ! suggested - top of feed / other column (groups feed)
 facebook.com##a[href*="/groups/discover"] > span > span:upward(21)
