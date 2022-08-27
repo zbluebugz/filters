@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 24 Aug 2022 21:00 UTC
+! Last modified: 27 Aug 2022 14:30 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
@@ -21,8 +21,8 @@ facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > d
 
 ! suggested (groups feed)
 ! - first one a solo image, second is a sprite image
-facebook.com##i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"]>div):style(border:6px dotted orange; padding: 0 0.25rem; width:66% !important;)
-facebook.com##i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/b8D0OhzjWyE.png"][style*="background-position: 0px -70px"]:upward(div[role="feed"] > div):style(border:6px dotted lightcoral)
+facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"]>div):style(border:6px dotted orange; padding: 0 0.25rem; width:66% !important;)
+facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/b8D0OhzjWyE.png"][style*="background-position: 0px -70px"]:upward(div[role="feed"] > div):style(border:6px dotted lightcoral)
 
 ! suggested - top of feed / other column (groups feed)
 facebook.com##a[href*="/groups/discover"] > span > span:upward(21):style(border:6px dotted pink; padding: 0 0.25rem; width:66% !important;)
