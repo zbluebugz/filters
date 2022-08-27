@@ -11,7 +11,7 @@
 ! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
 ! By downloading or viewing, or using this list, you are accepting these terms and the license.
 !
-
+!
 ! sponsored (news / groups / videos / search)
 ! -- clear out hidden elements to enable detection of sponsored posts (news / groups / search)
 ! --- do not use span[id] - search page doesn't have this. instead, use span[class]
@@ -26,62 +26,63 @@ facebook.com##[id="watch_feed"] > div span > span > a[href*="/ads/"] :matches-cs
 facebook.com##[id="watch_feed"] > div span > span > a[href*="/ads/"] :matches-css(position: absolute):remove()
 ! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
 facebook.com##div[role="feed"] > div div[data-0]:remove()
-
+!
 ! -- hide sponsored posts (news / groups / search feed)
-! -- שעה אחת = Hebrew for "one hour"
+! -- שעה אחת = Hebrew for "one hour"; ഒരു മണിക്കൂർ = Malaylam for "one/an hour"
 ! -- [\u0660-\u0669] = Arabic digits 
 ! -- [0-9] = ASCII digits
-facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted brown !important; padding: 0 0.25rem; width:66% !important;)
-facebook.com##[role="feed"] > div span > span > span > a[href="#"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted red !important; padding: 0 0.25rem; width:66% !important;)
-
+facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|ഒരു മണിക്കൂർ|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted brown !important; padding: 0 0.25rem; width:66% !important;)
+facebook.com##[role="feed"] > div span > span > span > a[href="#"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|ഒരു മണിക്കൂർ|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted red !important; padding: 0 0.25rem; width:66% !important;)
+!
 ! -- non-obfuscated version
-facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted maroon !important; padding: 0 0.25rem; width:66% !important;)
-facebook.com##[role="feed"] > div span > span > span > a[href="#"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted firebrick !important; padding: 0 0.25rem; width:66% !important;)
-
-
+facebook.com##[role="feed"] > div span > span > span > a[href*="/ads/"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|ഒരു മണിക്കൂർ|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted maroon !important; padding: 0 0.25rem; width:66% !important;)
+facebook.com##[role="feed"] > div span > span > span > a[href="#"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|ഒരു മണിക്കൂർ|[\u0660-\u0669]|[0-9]|^$)/)):upward([role="feed"] > div):style(border:6px dotted firebrick !important; padding: 0 0.25rem; width:66% !important;)
+!
+!
 ! -- hide sponsored posts (watch videos feed)
-facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward(div#watch_feed > div > div > div > div > div > div[class]):style(border:6px dotted darkred !important; padding: 0 0.25rem; width:66% !important;)
+facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span > span[class] > [style*="display"]:not(:has-text(/(שעה אחת|ഒരു മണിക്കൂർ|[\u0660-\u0669]|[0-9]|^$)/)):upward(div#watch_feed > div > div > div > div > div > div[class]):style(border:6px dotted darkred !important; padding: 0 0.25rem; width:66% !important;)
 ! -- non-obfuscated version
-facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|[\u0660-\u0669]|[0-9]|^$)/)):upward(div#watch_feed > div > div > div > div > div > div[class]):style(border:6px dotted gold !important; padding: 0 0.25rem; width:66% !important;)
-
-
+facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span > span:not([style]) > *:not(:has-text(/(שעה אחת|ഒരു മണിക്കൂർ|[\u0660-\u0669]|[0-9]|^$)/)):upward(div#watch_feed > div > div > div > div > div > div[class]):style(border:6px dotted gold !important; padding: 0 0.25rem; width:66% !important;)
+!
+!
 ! paid partnership posts (news feed)
 facebook.com##div[role="feed"] > div span[dir] > span[id] a[href^="/business/help/"]:upward(div[role="feed"] > div):style(border:6px dotted blue !important; padding: 0 0.25rem; width:66% !important;)
-
-
-! marketplace feed
+!
+!
+! hide sponsored posts (marketplace feed)
 ! - nb: AdGuard Base filter list hides the label only - not the marketplace item. here, we do both.
 ! - nb: "Sponsored" is not obfuscated
 facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]:upward(1):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
 facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(div[style*="max-width"]):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
-
-
+!
+!
+!
 ! suggested (news feed)
 ! - last span needs :not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
 facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward([role="feed"] > div):style(border:6px dotted silver !important; padding: 0 0.25rem; width:66% !important;)
-
+!
 ! suggested (groups feed)
 ! - first one a solo image, second is a sprite image
 facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"]>div):style(border:6px dotted orange; padding: 0 0.25rem; width:66% !important;)
 facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/b8D0OhzjWyE.png"][style*="background-position: 0px -70px"]:upward(div[role="feed"] > div):style(border:6px dotted lightcoral)
-
+!
 ! suggested - top of feed / other column (groups feed)
 facebook.com##a[href*="/groups/discover"] > span > span:upward(21):style(border:6px dotted pink; padding: 0 0.25rem; width:66% !important;)
-
-
+!
+!
 ! friends you may know (news feed)
 facebook.com##div[role="feed"] > div div[role="region"] > div > div > div:nth-of-type(1) > div > div > div > div > div > div > div > div > div > span > span > div > a[href*="/friends/suggestions/"][role="link"]:upward(div[role="feed"] > div):style(border:6px dotted lightblue; padding: 0 0.25rem; width:66% !important;)
-
+!
 ! stories | reels | rooms (news feed)
 ! - structure must be specific as tablist is used elsewhere. not found under [role="feed"].
 facebook.com##div[role="main"] > div > div > div > div > div > div > div > div[role="tablist"]:upward(4):style(border:6px dotted teal !important; padding: 0 0.25rem; width:66% !important;)
-
+!
 ! Reel/Short Videos (collection) (news feed)
 facebook.com##div[role="feed"] > div a[href="/reel/?s=ifu_see_more"]:upward(div[role="feed"] > div):style(border:6px dotted powderblue !important; padding: 0 0.25rem; width:66% !important;)
-
+!
 ! Reel post
 facebook.com##div[role="feed"] > div div a[href*="/reel/"] video:upward(div[role="feed"] > div):style(border:6px dotted steelblue !important; padding: 0 0.25rem; width:66% !important;)
-
+!
 ! "Information box" - climate info
 facebook.com##div[role="feed"] > div a[href*="/climatescienceinfo/?hoisted"]:upward(5):style(border:6px dotted peachpuff !important;)
 ! "Information box" - coronavirus info
