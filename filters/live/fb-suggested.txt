@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 23 Aug 2022 21:00 UTC
+! Last modified: 27 Aug 2022 14:30 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
