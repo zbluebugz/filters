@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 27 Aug 2022 15:15 UTC
+! Last modified: 04 Sept 2022 14:15 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
@@ -54,6 +54,8 @@ facebook.com##div[role="feed"] > div span[dir] > span[id] a[href^="/business/hel
 ! - nb: "Sponsored" is not obfuscated
 facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]:upward(1)
 facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(div[style*="max-width"])
+! - nb: fb dropped the sponsored details from the item, so use another method to detect the sponsored item (Sept 2022)
+facebook.com##div[class] > span > div a:not([href*="marketplace"]):upward(div[style*="max-width"])
 !
 !
 !
