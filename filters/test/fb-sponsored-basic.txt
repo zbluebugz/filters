@@ -54,3 +54,6 @@ facebook.com##div[role="feed"] > div span[dir] > span[id] a[href^="/business/hel
 ! - nb: "Sponsored" is not obfuscated
 facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]:upward(1):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
 facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(div[style*="max-width"]):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
+! - nb: fb dropped the sponsored details from the item, so use another method to detect the sponsored item (Sept 2022)
+facebook.com##div[class] > span > div a:not([href*="marketplace"]):upward(div[style*="max-width"]):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
+
