@@ -15,6 +15,7 @@ i.e. the rules hide the items that meets the rule's criteria
 #### fb-sponsored-basic.txt : ####
 - Sponsored posts
 - Paid Partnership posts
+- Sponsored * Paid for by ......
 
 - Applies to:
   - News feed
