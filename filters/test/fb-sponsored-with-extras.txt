@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 04 Sept 2022 14:00 UTC
+! Last modified: 12 Sept 2022 18:35 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
@@ -47,6 +47,9 @@ facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span
 !
 ! paid partnership posts (news feed)
 facebook.com##div[role="feed"] > div span[dir] > span[id] a[href^="/business/help/"]:upward(div[role="feed"] > div):style(border:6px dotted blue !important; padding: 0 0.25rem; width:66% !important;)
+!
+! sponsored * paid for by ...... (news feed)
+facebook.com##div[role="feed"] > div div:nth-child(2) > div > div:nth-child(2) > span[class] > span[id] > div:nth-child(2):not(>*):upward(div[role="feed"]> div):style(border:6px dotted DeepPink ; padding: 0 0.25rem; width:66% !important;)
 !
 !
 ! hide sponsored posts (marketplace feed)
