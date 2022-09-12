@@ -4,28 +4,23 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 27 Aug 2022 14:30 UTC
+! Last modified: 12 Sept 2022 18:50 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
 ! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
 ! By downloading or viewing, or using this list, you are accepting these terms and the license.
 !
-
+!
 ! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
 facebook.com##div[role="feed"] > div div[data-0]:remove()
-
+!
 ! suggested (news feed)
 ! - last span needs :not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
 facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward([role="feed"] > div)
-
+!
 ! suggested (groups feed)
-! - first one a solo image, second is a sprite image
-facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/T4ZqlZ3HdhP.png"]:upward(div[role="feed"] > div)
-! suggested (groups feed)
-facebook.com##div[role="feed"] > div i[data-visualcompletion="css-img"][style*="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/b8D0OhzjWyE.png"][style*="background-position: 0px -70px"]:upward(div[role="feed"] > div)
-
-
-
+facebook.com##div[role="article"][aria-posinset] > div > div > div > div > div > div > div > div:first-of-type:has(i[data-visualcompletion="css-img"][style]):upward(div[role="feed"] > div)
+!
 ! suggested - top of feed / other column (groups feed)
 facebook.com##a[href*="/groups/discover"] > span > span:upward(21)
