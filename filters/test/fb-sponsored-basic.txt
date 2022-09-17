@@ -4,7 +4,7 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 12 Sept 2022 18:30 UTC
+! Last modified: 17 Sept 2022 17:00 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
@@ -59,4 +59,7 @@ facebook.com##a[href="/ads/about/?entry_product=ad_preferences"]:upward(1):style
 facebook.com##div[class] > span > div > object > a[href*="/ads/about/"]:upward(div[style*="max-width"]):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
 ! - nb: fb dropped the sponsored details from the item, so use another method to detect the sponsored item (Sept 2022)
 facebook.com##div[class] > span > div a:not([href*="marketplace"]):upward(div[style*="max-width"]):style(border:6px dotted purple !important; padding: 0 0.25rem; width:66% !important;)
-
+!
+!
+! sponsored in news feed aside column
+facebook.com##div[role="complementary"] span:first-of-type ~ div:first-of-type > div:not([data-visualcompletion]) > span:style(border:6px dotted orange;display:block;)
