@@ -72,10 +72,10 @@ facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > d
 ! suggested in news feed aside column
 facebook.com##div[role="complementary"] span:first-of-type ~ div:first-of-type > div:not([data-visualcompletion]) > div
 !
-! suggested (groups feed)
-facebook.com##div[role="article"][aria-posinset] > div > div > div > div > div > div > div > div:first-of-type:has(i[data-visualcompletion="css-img"][style]):upward(div[role="feed"] > div)
+! suggested (groups feed) (requires 2 x [role="main"], otherwise catches the news feed' reels and short vidoes)
+facebook.com##[role="main"] [role="main"] div[role="article"][aria-posinset] > div > div > div > div > div > div > div > div:first-of-type:has(i[data-visualcompletion="css-img"][style]):upward(div[role="feed"] > div)
 !
-! suggested - top of feed / other column (groups feed)
+! suggested - top of feed / aside column (groups feed)
 facebook.com##a[href*="/groups/discover"] > span > span:upward(21)
 !
 !
