@@ -1,3 +1,8 @@
+
+*** RETIRED ***
+
+*** No longer updated ***
+
 # ~ Filters ~ #
 
 For use in uBlock Origin
