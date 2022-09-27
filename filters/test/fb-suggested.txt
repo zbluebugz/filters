@@ -4,25 +4,26 @@
 ! Homepage: https://github.com/zbluebugz/filters-fb
 ! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
 ! Language: English
-! Last modified: 23 Sept 2022 10:30:00 UTC
+! Last modified: 27 Sept 2022 23:30:00 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Legal stuff (T&C's) 
 ! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
 ! By downloading or viewing, or using this list, you are accepting these terms and the license.
 !
+! news feed posts collector: span[id="ssrb_feed_start"] ~ div > div
 !
 ! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
-facebook.com##div[role="feed"] > div div[data-0]:remove()
+facebook.com##span[id="ssrb_feed_start"] ~ div > div div[data-0]:remove()
 !
 ! suggested (news feed)
 ! - last span needs :not(>*) as it doesn't have any child elements. Without it, it'll cause false-positives.
-facebook.com##div[role="feed"] div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward([role="feed"] > div):style(border:6px dotted silver !important; padding: 0 0.25rem; width:66% !important;)
+facebook.com##span[id="ssrb_feed_start"] ~ div > div > div > div > div > div > div > div > div > div > div > div > div > div:nth-of-type(2) > div > div:nth-of-type(1) > div > div > div > div > span:not(>*):upward(span[id="ssrb_feed_start"] ~ div > div):style(border:6px dotted silver !important; padding: 0 0.25rem; width:66% !important;)
 !
 ! suggested in news feed aside column
 facebook.com##div[role="complementary"] span:first-of-type ~ div:first-of-type > div:not([data-visualcompletion]) > div:style(border:6px dotted pink;)
 !
-! suggested (groups feed) (requires 2 x [role="main"], otherwise catches the news feed' reels and short vidoes)
+! suggested (groups feed) (requires 2 x [role="main"], otherwise catches the news feed' reels and short videos)
 facebook.com##[role="main"] [role="main"] div[role="article"][aria-posinset] > div > div > div > div > div > div > div > div:first-of-type:has(i[data-visualcompletion="css-img"][style]):upward(div[role="feed"] > div):style(border:6px dotted DarkSlateGray; padding: 0 0.25rem; width:66% !important;)
 !
 ! suggested - top of feed / aside column (groups feed)
