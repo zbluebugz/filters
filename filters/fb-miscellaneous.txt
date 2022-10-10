@@ -1,0 +1,34 @@
+! Title: Filters - FB - miscellaneous
+! Description: Block friends you may know, stories | reels | rooms, reel/short videos (collection), reel posts, information boxes in News Feed
+! License: http://creativecommons.org/licenses/by/3.0/
+! Homepage: https://github.com/zbluebugz/filters-fb
+! Reporting Issues: https://github.com/zbluebugz/filters-fb/issues
+! Language: English
+! Last modified: 10 October 2022 21:00 UTC
+! Expires: 7 days (update frequency)
+!
+! Legal stuff (T&C's) 
+! In no event shall the list author be liable for any indirect, direct, punitive, special, incidental, or consequential damages whatsoever.
+! By downloading or viewing, or using this list, you are accepting these terms and the license.
+!
+
+! friends you may know (news feed)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div div[role="region"] > div > div > div:nth-of-type(1) > div > div > div > div > div > div > div > div > div > span > span > div > a[href*="/friends/suggestions/"][role="link"]:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div)
+
+! stories | reels | rooms (news feed)
+! - structure must be specific as tablist is used elsewhere. not found under [role="feed"].
+facebook.com##div[role="main"] > div > div > div > div > div > div > div > div[role="tablist"]:upward(4)
+
+! Reel/Short Videos (collection) (news feed)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div a[href="/reel/?s=ifu_see_more"]:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div)
+
+! Reel post
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div div a[href*="/reel/"] video:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div)
+
+
+! "Information box" - climate info
+facebook.com##dspan[id="ssrb_feed_start"] ~ * h3 ~ div a[href*="/climatescienceinfo/"]:upward(5)
+! "Information box" - coronavirus info
+facebook.com##dspan[id="ssrb_feed_start"] ~ * h3 ~ div a[href*="/coronavirus_info/"]:upward(5)
+! "Information box" - subscribe
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div a[href*="/support/"]:upward(5)
