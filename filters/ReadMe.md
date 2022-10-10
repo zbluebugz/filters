@@ -1,40 +1,31 @@
-## folder "test" ##
+# Filters #
 
-Filters in the **test** folder are in test mode.<br />
-i.e. the rules apply a thick dotted colour border around the items that meets the rule's criteria
+These rules are in __live__ mode.
+<br />
+i.e. the rules hide the items that meets the rule's criteria.
 <br />
 <br />
-## folder "live" ##
-
-Filters in the **live** folder are in live mode<br />
-i.e. the rules hide the items that meets the rule's criteria
-<br />
-
 ## what do the rules hide / highlight ##
-
-#### fb-sponsored-basic.txt : ####
-- Sponsored posts
-- Paid Partnership posts
-- Sponsored * Paid for by ......
-
-- Applies to:
-  - News feed
-  - Groups feed
-  - Watch Videos feed
-  - Search results
-<br />
-
 #### fb-suggested.txt : ####
 - Suggested posts (all types of suggested posts)
-
-- Applies to:
   - News feed
   - Groups feed
-  - Watch Videos feed
-  - Search results
 <br />
 
+#### fb-sponsored-basic-except-newsfeed-sponsored.txt ####
+- Sponsored posts in Groups feed 
+- Sponsored posts in Videos feed
+- Sponsored posts in Marketplace feed
+- Sponsored posts in Search feed
+- Paid partnership in News feed
+- Sponsored * paid for by ... in News feed
+- Sponsored item in News feed's aside column
+<br />
+
+
+
 #### fb-miscellaneous.txt : ####
+Following applies to the News Feed:
 - Friends may know
 - Stories | Reels | Rooms
 - Reel/Short videos (collection)
@@ -43,16 +34,3 @@ i.e. the rules hide the items that meets the rule's criteria
   - Climate info
   - Coronavirus info
   - Subscribe
-
-- Applies to:
-  - News feed
-<br />
-
-#### fb-sponsored-with-extras.txt : ####
-- All of the above three files combined
-
-- Applies to:
-  - News feed
-  - Groups feed
-  - Watch Videos feed
-  - Search results
