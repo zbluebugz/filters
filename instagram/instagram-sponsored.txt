@@ -12,4 +12,5 @@
 ! By downloading or viewing, or using this list, you are accepting these terms and the license.
 !
 
-instagram.com##article > div > div > div > header > div:nth-of-type(2) > div:nth-of-type(2) > div > div > span:has-text(/^Sponsored$/i):upward(article > div)
+! English | German
+instagram.com##article > div > div > div > header > div:nth-of-type(2) > div:nth-of-type(2) > div > div > span:has-text(/^Sponsored|Gesponsert$/i):upward(article > div)
