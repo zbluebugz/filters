@@ -13,17 +13,17 @@
 !
 
 ! friends you may know (news feed)
-facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div div[role="region"] > div > div > div:nth-of-type(1) > div > div > div > div > div > div > div > div > div > span > span > div > a[href*="/friends/suggestions/"][role="link"]:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div div[role="region"] > div > div > div:nth-of-type(1) > div > div > div > div > div > div > div > div > div > span > span > div > a[href*="/friends/suggestions/"][role="link"]:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div > div)
 
 ! stories | reels | rooms (news feed)
 ! - structure must be specific as tablist is used elsewhere. not found under [role="feed"].
 facebook.com##div[role="main"] > div > div > div > div > div > div > div > div[role="tablist"]:upward(4)
 
 ! Reel/Short Videos (collection) (news feed)
-facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div a[href="/reel/?s=ifu_see_more"]:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div a[href="/reel/?s=ifu_see_more"]:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div > div)
 
 ! Reel post
-facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div div a[href*="/reel/"] video:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div div a[href*="/reel/"] video:upward(span[id="ssrb_feed_start"] ~ * h3 ~ div > div)
 
 
 ! "Information box" - climate info
