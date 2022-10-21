@@ -30,7 +30,7 @@ facebook.com##[id="watch_feed"] > div span > span > a[href="#"] :matches-css(pos
 facebook.com##[id="watch_feed"] > div span > span > a[href*="/ads/"] :matches-css(display: none):remove()
 facebook.com##[id="watch_feed"] > div span > span > a[href*="/ads/"] :matches-css(position: absolute):remove()
 ! -- clear out hidden elements to allow some of the rules below to work ("Facebook")
-facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div div[data-0]:remove()
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div div[data-0]:remove()
 facebook.com##div[role="feed"] > div div[data-0]:remove()
 !
 ! -- hide sponsored posts (groups / search feed)
@@ -52,10 +52,10 @@ facebook.com##div[id="watch_feed"] > div span > span > span > a[href="#"] > span
 !
 !
 ! paid partnership posts (news feed)
-facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div span[dir] > span[id] a[href^="/business/help/"]:upward(facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div span[dir] > span[id] a[href^="/business/help/"]:upward(facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div)
 !
 ! sponsored * paid for by ...... (news feed)
-facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div div:nth-child(2) > div > div:nth-child(2) > span[class] > span[id] > div:nth-child(2):not(>*):upward(facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div)
+facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div div:nth-child(2) > div > div:nth-child(2) > span[class] > span[id] > div:nth-child(2):not(>*):upward(facebook.com##span[id="ssrb_feed_start"] ~ * h3 ~ div > div)
 !
 !
 ! hide sponsored posts (marketplace feed)
